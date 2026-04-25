@@ -4,6 +4,11 @@ import { MapPin, Calendar, Sparkles } from "lucide-react";
 import logoCloudKaptan from "@/assets/logos/cloudkaptan.png";
 import logoIndependent from "@/assets/logos/independent.png";
 
+interface SkillGroup {
+  category: string;
+  items: string[];
+}
+
 interface Item {
   when: string;
   role: string;
@@ -11,37 +16,61 @@ interface Item {
   location: string;
   summary: string;
   achievements: string[];
+  skills: SkillGroup[];
   logo?: string;
   fallback: string;
 }
 
 const ITEMS: Item[] = [
-  {
-    when: "Nov 2025 — Present",
-    role: "Software Engineer Trainee",
-    org: "CloudKaptan Consultancy Services",
-    location: "Kolkata, India",
-    summary:
-      "Building enterprise contract lifecycle workflows on DocuSign CLM with version-controlled, multi-environment deployments.",
-    achievements: [
-      "Implemented automated CLM workflows that streamlined contract approval cycles across regions.",
-      "Owned multi-environment release pipelines with version control and rollback safety.",
-      "Collaborated cross-functionally to translate client requirements into scalable CLM blueprints.",
-    ],
-    logo: logoCloudKaptan,
-    fallback: "CK",
-  },
+ {
+  when: "Nov 2025 — Present",
+  role: "Software Engineer Trainee — Salesforce & DocuSign CLM",
+  org: "CloudKaptan Consultancy Services",
+  location: "Kolkata, India",
+  summary:
+    "Engineering enterprise-grade contract lifecycle systems and CRM automation across global regions, translating complex business workflows into scalable, version-controlled solutions.",
+  achievements: [
+    "Architected bulkified Apex trigger frameworks with optimized SOQL/SOSL, sustaining high-performance processing under strict Salesforce governor limits.",
+    "Engineered Visualforce + Apex controller layers powering dynamic eForms, validation logic, and CRM-driven document workflows.",
+    "Spearheaded the global DocuSign CLM rollout across London, New York, Geneva, Milan, Hong Kong and Zurich — ensuring multi-regional compliance for Consignment and NDA workstreams.",
+    "Designed a Git-based CLM versioning workflow, exporting workflow JSON configurations and C# automation scripts into GitHub for traceable change management and collaborative development.",
+    "Standardized Dev/UAT/Prod environment strategy and repository structure, enabling scalable deployment and lifecycle management of CLM workflows.",
+    "Built end-to-end Private Sale Agreement contract lifecycle, translating business requirements into automated workflows integrated with SAP systems.",
+    "Automated enterprise workflows using Salesforce Flows integrated with Apex, achieving 85%+ code coverage and production-ready deployments.",
+    "Resolved critical production issues through deep debugging and postmortem analysis, identifying root causes and implementing system-level fixes.",
+    "Collaborated with stakeholders to propose QA automation strategies for complex CLM workflows, improving testing scalability and reliability."
+  ],
+  skills: [
+    { category: "Backend", items: ["Apex", "SOQL/SOSL", "Visualforce", "C#"] },
+    { category: "Automation", items: ["Salesforce Flows", "Triggers", "eForm Logic", "Conditional Routing"] },
+    { category: "Integration", items: ["SAP Integration", "API Workflows", "Enterprise Systems"] },
+    { category: "DevOps", items: ["GitHub", "Multi-Env Strategy", "JSON Config Versioning"] },
+    { category: "Testing", items: ["Apex Test Classes", "E2E Testing", "85%+ Coverage", "Debugging & RCA"] },
+    { category: "Domain", items: ["Salesforce CRM", "DocuSign CLM", "Contract Lifecycle", "Global Compliance"] },
+    { category: "Business", items: ["Requirement Analysis", "Stakeholder Communication", "Process Design", "Problem Solving"] }
+  ],
+  logo: logoCloudKaptan,
+  fallback: "CK",
+},
   {
     when: "Jun 2025 — Aug 2025",
-    role: "Software Support Engineer · Intern",
+    role: "Software Engineer · Intern",
     org: "Soefia Education Incorporated",
     location: "Remote · USA",
     summary:
-      "Supported a production multi-tenant AWS architecture and hardened backend reliability for a learning platform.",
+      "Owned reliability and infrastructure work on a multi-tenant AWS learning platform serving production traffic with zero customer-impacting outages.",
     achievements: [
-      "Operated multi-tenant infra on ECS, S3, Amplify and Secrets Manager with zero customer-impacting outages.",
-      "Authored pytest suites covering critical API edge-cases, lifting backend confidence pre-release.",
-      "Triaged and resolved 30+ production bugs through structured reporting and root-cause analysis.",
+      "Co-deployed a multi-tenant AWS architecture spanning ECS task definitions, S3 isolation per tenant, AWS Amplify namespaces and Secrets Manager-backed credential rotation.",
+      "Hardened backend resilience by uncovering and patching API edge-cases through targeted pytest suites, reducing regression escapes into staging.",
+      "Triaged and resolved 30+ production issues via structured functional testing and root-cause reporting, accelerating release cadence for the engineering team.",
+      "Partnered with senior engineers on tenant-isolation reviews and on-call response, contributing to a stable cross-region rollout.",
+    ],
+    skills: [
+      { category: "Backend", items: ["Python", "FastAPI", "REST APIs"] },
+      { category: "Cloud", items: ["AWS ECS", "S3", "Amplify", "Secrets Manager"] },
+      { category: "Testing", items: ["pytest", "Functional Testing", "Edge-Case Analysis"] },
+      { category: "Tools", items: ["GitHub", "CloudWatch", "Postman"] },
+      { category: "Domain", items: ["Multi-Tenant SaaS", "EdTech"] },
     ],
     logo: logoIndependent,
     fallback: "SE",
@@ -131,6 +160,35 @@ export function Experience() {
                       </li>
                     ))}
                   </ul>
+
+                  {/* Skills & Tech Used */}
+                  <div className="mt-6 border-t border-border/70 pt-5">
+                    <p className="eyebrow mb-3 text-[10px] md:text-[11px]">
+                      Skills & Tech Used
+                    </p>
+                    <div className="space-y-3">
+                      {it.skills.map((group) => (
+                        <div
+                          key={group.category}
+                          className="flex flex-col gap-2 sm:flex-row sm:items-start sm:gap-4"
+                        >
+                          <span className="shrink-0 font-mono text-[10px] uppercase tracking-widest text-ink-soft sm:w-28 sm:pt-1.5 md:text-[11px]">
+                            {group.category}
+                          </span>
+                          <div className="flex flex-wrap gap-1.5">
+                            {group.items.map((skill) => (
+                              <span
+                                key={skill}
+                                className="inline-flex items-center rounded-full border border-border bg-canvas-warm/50 px-2.5 py-1 font-mono text-[10px] tracking-wide text-foreground/85 transition-colors duration-200 hover:border-accent/50 hover:bg-canvas-warm hover:text-foreground md:text-[11px]"
+                              >
+                                {skill}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                 </article>
               </li>
             </Reveal>
