@@ -24,33 +24,56 @@ interface Item {
 const ITEMS: Item[] = [
  {
   when: "Nov 2025 — Present",
-  role: "Software Engineer Trainee — Salesforce & DocuSign CLM",
+  role: "Software Engineer Trainee — Salesforce Developer & DocuSign CLM Specialist",
   org: "CloudKaptan Consultancy Services",
   location: "Kolkata, India",
   summary:
-    "Engineering enterprise-grade contract lifecycle systems and CRM automation across global regions, translating complex business workflows into scalable, version-controlled solutions.",
-  achievements: [
-    "Architected bulkified Apex trigger frameworks with optimized SOQL/SOSL, sustaining high-performance processing under strict Salesforce governor limits.",
-    "Engineered Visualforce + Apex controller layers powering dynamic eForms, validation logic, and CRM-driven document workflows.",
-    "Spearheaded the global DocuSign CLM rollout across London, New York, Geneva, Milan, Hong Kong and Zurich — ensuring multi-regional compliance for Consignment and NDA workstreams.",
-    "Designed a Git-based CLM versioning workflow, exporting workflow JSON configurations and C# automation scripts into GitHub for traceable change management and collaborative development.",
-    "Standardized Dev/UAT/Prod environment strategy and repository structure, enabling scalable deployment and lifecycle management of CLM workflows.",
-    "Built end-to-end Private Sale Agreement contract lifecycle, translating business requirements into automated workflows integrated with SAP systems.",
-    "Automated enterprise workflows using Salesforce Flows integrated with Apex, achieving 85%+ code coverage and production-ready deployments.",
-    "Resolved critical production issues through deep debugging and postmortem analysis, identifying root causes and implementing system-level fixes.",
-    "Collaborated with stakeholders to propose QA automation strategies for complex CLM workflows, improving testing scalability and reliability."
+    "Delivering enterprise CRM automation and contract lifecycle solutions by combining Salesforce backend engineering with DocuSign CLM workflow architecture across global regions.",
+
+  sections: [
+    {
+      title: "Salesforce Developer",
+      achievements: [
+        "Engineered scalable backend logic using Apex, designing bulkified trigger frameworks and optimized SOQL/SOSL queries to handle high-volume transactions while strictly adhering to Salesforce governor limits.",
+
+        "Developed dynamic CRM interfaces using Visualforce + Apex Controllers, enabling advanced form handling, validation, and document-driven workflows integrated with business processes.",
+
+        "Automated enterprise workflows using Record-Triggered Flows and Screen Flows, seamlessly integrating with Apex logic and achieving 85%+ code coverage through robust test class implementation."
+      ]
+    },
+
+    {
+      title: "DocuSign CLM Specialist",
+      achievements: [
+        "Led multi-region DocuSign CLM implementations, delivering contract lifecycle solutions across London, New York, Geneva, Milan, Hong Kong, and Zurich, ensuring compliance and consistency for Consignment and NDA workflows.",
+
+        "Designed complex workflow architectures, including conditional routing based on business rules, advanced eForm logic, and end-to-end lifecycle handling of contract processes.",
+
+        "Built a Git-based version control system for CLM workflows, exporting workflow configurations (JSON) and expression scripts (C#) into GitHub, enabling traceability, rollback, and structured change management while introducing collaborative development workflows.",
+
+        "Defined environment strategies (Dev / UAT / Prod) and repository structures for scalable deployment and lifecycle management of contract workflows.",
+
+        "Developed a complete Private Sale Agreement lifecycle, translating business requirements into executable CLM workflows and integrating with SAP systems for enterprise data flow.",
+
+        "Performed deep production debugging and postmortem analysis, resolving critical workflow and integration issues through root cause analysis and system-level fixes.",
+
+        "Contributed to QA automation strategy discussions, collaborating with stakeholders to propose scalable testing solutions for complex contract workflows."
+      ]
+    }
   ],
+
   skills: [
     { category: "Backend", items: ["Apex", "SOQL/SOSL", "Visualforce", "C#"] },
     { category: "Automation", items: ["Salesforce Flows", "Triggers", "eForm Logic", "Conditional Routing"] },
-    { category: "Integration", items: ["SAP Integration", "API Workflows", "Enterprise Systems"] },
-    { category: "DevOps", items: ["GitHub", "Multi-Env Strategy", "JSON Config Versioning"] },
-    { category: "Testing", items: ["Apex Test Classes", "E2E Testing", "85%+ Coverage", "Debugging & RCA"] },
+    { category: "Integration", items: ["SAP Integration", "Enterprise Workflows"] },
+    { category: "DevOps", items: ["GitHub", "Version Control", "Multi-Env Strategy"] },
+    { category: "Testing", items: ["Apex Test Classes", "E2E Testing", "Debugging", "RCA"] },
     { category: "Domain", items: ["Salesforce CRM", "DocuSign CLM", "Contract Lifecycle", "Global Compliance"] },
-    { category: "Business", items: ["Requirement Analysis", "Stakeholder Communication", "Process Design", "Problem Solving"] }
+    { category: "Business", items: ["Requirement Analysis", "Stakeholder Communication", "Process Design"] }
   ],
+
   logo: logoCloudKaptan,
-  fallback: "CK",
+  fallback: "CK"
 },
   {
     when: "Jun 2025 — Aug 2025",
@@ -62,13 +85,11 @@ const ITEMS: Item[] = [
     achievements: [
       "Co-deployed a multi-tenant AWS architecture spanning ECS task definitions, S3 isolation per tenant, AWS Amplify namespaces and Secrets Manager-backed credential rotation.",
       "Hardened backend resilience by uncovering and patching API edge-cases through targeted pytest suites, reducing regression escapes into staging.",
-      "Triaged and resolved 30+ production issues via structured functional testing and root-cause reporting, accelerating release cadence for the engineering team.",
-      "Partnered with senior engineers on tenant-isolation reviews and on-call response, contributing to a stable cross-region rollout.",
     ],
     skills: [
       { category: "Backend", items: ["Python", "FastAPI", "REST APIs"] },
       { category: "Cloud", items: ["AWS ECS", "S3", "Amplify", "Secrets Manager"] },
-      { category: "Testing", items: ["pytest", "Functional Testing", "Edge-Case Analysis"] },
+      { category: "Testing", items: ["pytest", "Unit Testing"] },
       { category: "Tools", items: ["GitHub", "CloudWatch", "Postman"] },
       { category: "Domain", items: ["Multi-Tenant SaaS", "EdTech"] },
     ],
