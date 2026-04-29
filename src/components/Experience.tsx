@@ -37,14 +37,6 @@ const ITEMS: Item[] = [
       "Delivering enterprise CRM automation and contract lifecycle solutions by combining Salesforce backend engineering with DocuSign CLM workflow architecture across global regions.",
     sections: [
       {
-        title: "Salesforce Developer",
-        achievements: [
-          "Engineered scalable backend logic using Apex, designing bulkified trigger frameworks and optimized SOQL/SOSL queries to handle high-volume transactions while strictly adhering to Salesforce governor limits.",
-          "Developed dynamic CRM interfaces using Visualforce + Apex Controllers, enabling advanced form handling, validation, and document-driven workflows integrated with business processes.",
-          "Automated enterprise workflows using Record-Triggered Flows and Screen Flows, seamlessly integrating with Apex logic and achieving 85%+ code coverage through robust test class implementation.",
-        ],
-      },
-      {
         title: "DocuSign CLM Solutions & Business Workflow Engineer",
         achievements: [
           "Led multi-region DocuSign CLM implementations, delivering contract lifecycle solutions across London, New York, Geneva, Milan, Hong Kong, and Zurich, ensuring compliance and consistency for Consignment and NDA workflows.",
@@ -54,6 +46,14 @@ const ITEMS: Item[] = [
           "Developed a complete Private Sale Agreement lifecycle, translating business requirements into executable CLM workflows and integrating with SAP systems for enterprise data flow.",
           "Performed deep production debugging and postmortem analysis, resolving critical workflow and integration issues through root cause analysis and system-level fixes.",
           "Contributed to QA automation strategy discussions, collaborating with stakeholders to propose scalable testing solutions for complex contract workflows.",
+        ],
+      },
+      {
+        title: "Salesforce Developer",
+        achievements: [
+          "Engineered scalable backend logic using Apex, designing bulkified trigger frameworks and optimized SOQL/SOSL queries to handle high-volume transactions while strictly adhering to Salesforce governor limits.",
+          "Developed dynamic CRM interfaces using Visualforce + Apex Controllers, enabling advanced form handling, validation, and document-driven workflows integrated with business processes.",
+          "Automated enterprise workflows using Record-Triggered Flows and Screen Flows, seamlessly integrating with Apex logic and achieving 85%+ code coverage through robust test class implementation.",
         ],
       },
     ],
