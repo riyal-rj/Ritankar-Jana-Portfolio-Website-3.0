@@ -5,6 +5,7 @@ const NAV = [
   { label: "Work", href: "#work" },
   { label: "About", href: "#about" },
   { label: "Stack", href: "#stack" },
+  { label: "Experience", href: "#experience" },
   { label: "Education", href: "#education" },
   { label: "Contact", href: "#contact" },
 ];
@@ -52,6 +53,14 @@ export function SiteHeader() {
               {item.label}
             </a>
           ))}
+          <a
+            href="https://leetcode.com/u/logiknest-RJ/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-mono text-xs uppercase tracking-widest text-muted-foreground link-underline transition-colors hover:text-foreground"
+          >
+            LeetCode
+          </a>
           <a
             href="https://github.com/riyal-rj"
             target="_blank"

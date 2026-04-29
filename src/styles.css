@@ -57,26 +57,28 @@
   --radius: 0.5rem;
 
   /* Editorial palette */
-  --canvas: oklch(0.965 0.012 80);          /* warm ivory */
-  --canvas-warm: oklch(0.93 0.018 75);      /* slightly deeper paper */
-  --ink: oklch(0.22 0.012 60);              /* deep charcoal-brown */
-  --ink-soft: oklch(0.42 0.012 60);         /* secondary text */
-  --rust: oklch(0.55 0.14 38);              /* muted terracotta accent */
-  --rust-soft: oklch(0.78 0.08 45);
-  --hairline: oklch(0.22 0.012 60 / 0.14);
+  /* Graphite + Emerald — engineering-grade neutral with one calm accent */
+  --canvas: oklch(0.16 0.003 270);          /* #0C0C0D true graphite */
+  --canvas-warm: oklch(0.205 0.004 270);    /* #161618 card surface */
+  --ink: oklch(0.92 0.004 250);             /* #E5E7EB soft white */
+  --ink-soft: oklch(0.72 0.006 255);        /* #9CA3AF muted gray */
+  --ink-faint: oklch(0.58 0.008 255);       /* #6B7280 metadata */
+  --rust: oklch(0.72 0.15 165);             /* #10B981 muted emerald accent */
+  --rust-soft: oklch(0.78 0.11 165);
+  --hairline: oklch(0.92 0.004 250 / 0.07);
 
   /* Map to shadcn semantic tokens */
   --background: var(--canvas);
   --foreground: var(--ink);
-  --card: var(--canvas);
+  --card: var(--canvas-warm);
   --card-foreground: var(--ink);
-  --popover: var(--canvas);
+  --popover: var(--canvas-warm);
   --popover-foreground: var(--ink);
   --primary: var(--ink);
   --primary-foreground: var(--canvas);
-  --secondary: var(--canvas-warm);
+  --secondary: oklch(0.245 0.005 270);      /* elevated surface */
   --secondary-foreground: var(--ink);
-  --muted: var(--canvas-warm);
+  --muted: oklch(0.225 0.004 270);
   --muted-foreground: var(--ink-soft);
   --accent: var(--rust);
   --accent-foreground: var(--canvas);
@@ -88,13 +90,14 @@
 }
 
 .dark {
-  --canvas: oklch(0.16 0.008 60);
-  --canvas-warm: oklch(0.22 0.01 60);
-  --ink: oklch(0.95 0.008 80);
-  --ink-soft: oklch(0.7 0.012 70);
-  --rust: oklch(0.72 0.13 42);
-  --rust-soft: oklch(0.55 0.1 40);
-  --hairline: oklch(0.95 0.008 80 / 0.14);
+  --canvas: oklch(0.16 0.003 270);
+  --canvas-warm: oklch(0.205 0.004 270);
+  --ink: oklch(0.92 0.004 250);
+  --ink-soft: oklch(0.72 0.006 255);
+  --ink-faint: oklch(0.58 0.008 255);
+  --rust: oklch(0.72 0.15 165);
+  --rust-soft: oklch(0.78 0.11 165);
+  --hairline: oklch(0.92 0.004 250 / 0.07);
 
   --background: var(--canvas);
   --foreground: var(--ink);
@@ -104,9 +107,9 @@
   --popover-foreground: var(--ink);
   --primary: var(--ink);
   --primary-foreground: var(--canvas);
-  --secondary: var(--canvas-warm);
+  --secondary: oklch(0.245 0.005 270);
   --secondary-foreground: var(--ink);
-  --muted: var(--canvas-warm);
+  --muted: oklch(0.225 0.004 270);
   --muted-foreground: var(--ink-soft);
   --accent: var(--rust);
   --accent-foreground: var(--canvas);
@@ -241,13 +244,13 @@
   @media (min-width: 768px) { .editorial { padding-inline: 2.5rem; } }
   @media (min-width: 1280px) { .editorial { padding-inline: 4rem; } }
 
-  /* Unified entity logo treatment — desaturate + tint to ink/rust palette */
+  /* Unified entity logo treatment — neutral desaturation on dark slate */
   .entity-logo {
-    box-shadow: 0 1px 0 0 var(--hairline), 0 8px 24px -16px color-mix(in oklab, var(--ink) 35%, transparent);
+    box-shadow: 0 1px 0 0 var(--hairline), 0 6px 18px -14px rgba(0, 0, 0, 0.6);
   }
   .entity-logo-img {
-    filter: grayscale(100%) brightness(0.92) contrast(0.95) sepia(18%) hue-rotate(-8deg);
-    opacity: 0.82;
+    filter: grayscale(100%) brightness(0.95) contrast(0.95);
+    opacity: 0.78;
   }
   .entity-logo:hover .entity-logo-img {
     filter: none;
