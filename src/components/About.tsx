@@ -2,7 +2,7 @@ import { Reveal } from "./Reveal";
 
 const FACTS = [
   { k: "Based in", v: "Kolkata, India" },
-  { k: "Currently", v: "CloudKaptan · Software Engineer Trainee" },
+  { k: "Currently", v: "TCS · Systems Engineer" },
   { k: "Focus", v: "Backend · Microservices · LLMs " },
   { k: "Available", v: "Open to full-time roles" },
 ];
@@ -29,8 +29,8 @@ export function About() {
             <Reveal delay={0.1}>
               <div className="mt-12 space-y-6 text-lg leading-relaxed text-ink-soft md:text-xl">
                 <p>
-                  I'm a software engineer trainee at{" "}
-                  <span className="text-foreground">CloudKaptan</span>, with a
+                  I'm a system engineer at{" "}
+                  <span className="text-foreground">Tata Consultancy Services</span>, with a
                   bias toward backend systems — the kind of work where
                   correctness, latency, and observability matter more than
                   pixels.
@@ -40,6 +40,17 @@ export function About() {
                   backends and applied AI: gRPC microservices, message brokers,
                   RAG pipelines and the quiet plumbing that turns a clever
                   prototype into something operable in production.
+                </p>
+                <p>
+                  Previously at{" "}
+                  <span className="text-foreground">
+                    CloudKaptan Consultancy Services
+                  </span>
+                  , I worked as a Software Engineer Trainee, building scalable Salesforce solutions and later leading enterprise DocuSign CLM workflows across global regions with SAP-integrated business processes and Git-based workflow versioning.
+                </p>
+
+                <p>
+                  I translated business requirements into automated contract lifecycle solutions, while also driving workflow quality initiatives through production debugging, RCA, and automation-focused QA improvements.
                 </p>
                 <p>
                   When I'm not shipping, I'm writing notes on system design,
