@@ -1,21 +1,30 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ritankar Jana — Backend Engineer & LLM Tinkerer</title>
+    <title>Ritankar Jana — Backend & AI Engineer</title>
     <meta
       name="description"
-      content="Portfolio of Ritankar Jana — software engineer building robust backend systems, microservices, and LLM-powered products. Based in Kolkata, India."
+      content="Portfolio of Ritankar Jana — backend and AI engineer building distributed systems, agentic AI and enterprise RAG for global BFSI clients. Based in Kolkata, India."
     />
     <meta name="author" content="Ritankar Jana" />
-    <meta property="og:title" content="Ritankar Jana — Backend Engineer" />
+    <meta name="theme-color" content="#fafafa" />
+    <meta property="og:title" content="Ritankar Jana — Backend & AI Engineer" />
     <meta
       property="og:description"
-      content="Backend engineer building microservices, distributed systems, and applied AI products. Selected work, stack and contact."
+      content="Backend and AI engineer: distributed systems, agentic AI and enterprise RAG for global banking, insurance and luxury clients."
     />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script>
+      // Apply the saved theme before first paint to avoid a flash
+      try {
+        if (localStorage.getItem("theme") === "dark") document.documentElement.dataset.theme = "dark";
+      } catch (e) {}
+    </script>
   </head>
   <body>
     <div id="root"></div>

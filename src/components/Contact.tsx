@@ -1,11 +1,17 @@
 import { useState, type FormEvent } from "react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { Reveal } from "./Reveal";
+import { SectionHeading } from "./SectionHeading";
 
 const SOCIALS = [
-  { label: "Email", href: "mailto:ritankar.jana.official@gmail.com" },
-  { label: "GitHub", href: "https://github.com/riyal-rj" },
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/riyal-rj/" },
-  { label: "X / Twitter", href: "https://x.com/jana_ritankar" },
+  {
+    label: "Email",
+    value: "ritankar.jana.official@gmail.com",
+    href: "mailto:ritankar.jana.official@gmail.com",
+  },
+  { label: "GitHub", value: "riyal-rj", href: "https://github.com/riyal-rj" },
+  { label: "LinkedIn", value: "in/riyal-rj", href: "https://www.linkedin.com/in/riyal-rj/" },
+  { label: "X / Twitter", value: "@jana_ritankar", href: "https://x.com/jana_ritankar" },
 ];
 
 export function Contact() {
@@ -23,39 +29,44 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="relative bg-foreground text-background py-32 md:py-40">
-      <div className="editorial">
-        <Reveal>
-          <p className="eyebrow mb-8 text-background/60">06 — Contact</p>
-        </Reveal>
+    <section id="contact" className="section scroll-mt-16 overflow-hidden">
+      <div className="editorial relative">
+        <SectionHeading
+          index="09"
+          eyebrow="Contact"
+          title={
+            <>
+              Let's build something <span className="accent-serif text-accent">good.</span>
+            </>
+          }
+          description="Reach out directly, or drop a note below — I usually reply within a day or two."
+        />
 
-        <Reveal delay={0.05}>
-          <h2 className="font-display text-[12vw] leading-[0.92] tracking-[-0.04em] sm:text-[9vw] lg:text-[7.5vw]">
-            Let's build
-            <br />
-            something <span className="display-wonk text-accent">good.</span>
-          </h2>
-        </Reveal>
-
-        <div className="mt-20 grid grid-cols-1 gap-16 lg:grid-cols-12 lg:gap-20">
-          <Reveal delay={0.1} className="lg:col-span-7">
-            <form onSubmit={onSubmit} className="space-y-10">
-              <div className="grid grid-cols-1 gap-10 sm:grid-cols-2">
-                <Field name="name" label="Your name" required />
-                <Field name="email" label="Email address" type="email" required />
+        <div className="grid grid-cols-1 gap-4 lg:grid-cols-12">
+          <Reveal className="min-w-0 lg:col-span-7">
+            <form onSubmit={onSubmit} className="card space-y-5 p-6 md:p-8">
+              <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+                <Field name="name" label="Your name" autoComplete="name" required />
+                <Field
+                  name="email"
+                  label="Email address"
+                  type="email"
+                  autoComplete="email"
+                  required
+                />
               </div>
               <Field name="message" label="The message" textarea required />
 
-              <div className="flex flex-wrap items-center gap-6">
+              <div className="flex flex-wrap items-center gap-4 pt-2">
                 <button
                   type="submit"
-                  className="group inline-flex items-center gap-3 rounded-full bg-background px-8 py-4 font-mono text-xs uppercase tracking-widest text-foreground transition-transform hover:-translate-y-0.5"
+                  className="group inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background transition-opacity hover:opacity-90"
                 >
                   Send message
-                  <span className="transition-transform group-hover:translate-x-1">→</span>
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
                 </button>
                 {sent && (
-                  <span className="font-mono text-xs uppercase tracking-widest text-accent">
+                  <span className="font-mono text-xs text-accent" role="status">
                     Opening your mail client…
                   </span>
                 )}
@@ -63,30 +74,34 @@ export function Contact() {
             </form>
           </Reveal>
 
-          <Reveal delay={0.2} className="lg:col-span-5">
-            <p className="eyebrow text-background/60">Direct lines</p>
-            <ul className="mt-6 divide-y divide-background/15 border-y border-background/15">
+          <Reveal delay={0.1} className="flex min-w-0 flex-col gap-4 lg:col-span-5">
+            <ul className="card divide-y divide-border">
               {SOCIALS.map((s) => (
                 <li key={s.label}>
                   <a
                     href={s.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex items-center justify-between py-5 transition-colors hover:text-accent"
+                    className="group flex items-center justify-between gap-4 px-5 py-4 transition-colors hover:bg-canvas-warm"
                   >
-                    <span className="font-display text-2xl">{s.label}</span>
-                    <span className="font-mono text-xs uppercase tracking-widest text-background/60 transition-transform group-hover:-translate-y-0.5 group-hover:text-accent">
-                      ↗
+                    <span className="min-w-0">
+                      <span className="eyebrow block">{s.label}</span>
+                      <span className="mt-1 block truncate text-[15px] font-medium text-foreground">
+                        {s.value}
+                      </span>
                     </span>
+                    <ArrowUpRight className="h-4 w-4 shrink-0 text-ink-faint transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-accent" />
                   </a>
                 </li>
               ))}
             </ul>
 
-            <div className="mt-12 rounded-sm border border-background/20 p-6">
-              <p className="eyebrow text-background/60">Currently</p>
-              <p className="mt-3 font-display text-xl leading-snug">
-                Open to backend / full-stack roles and interesting freelance
+            <div className="card p-5">
+              <p className="eyebrow flex items-center gap-2.5">
+                <span className="pulse-dot" aria-hidden /> Currently
+              </p>
+              <p className="mt-3 text-[15px] leading-relaxed text-foreground">
+                Open to AI Engineer, Backend Engineer, SDE and FDE roles, and interesting freelance
                 collaborations.
               </p>
             </div>
@@ -103,33 +118,26 @@ interface FieldProps {
   type?: string;
   textarea?: boolean;
   required?: boolean;
+  autoComplete?: string;
 }
 
-function Field({ name, label, type = "text", textarea, required }: FieldProps) {
+function Field({ name, label, type = "text", textarea, required, autoComplete }: FieldProps) {
   const baseClass =
-    "peer w-full bg-transparent border-b border-background/30 px-0 py-3 font-display text-2xl text-background placeholder-transparent focus:border-accent focus:outline-none transition-colors";
+    "mt-2 w-full rounded-xl border border-border bg-canvas-warm px-4 py-3 text-[15px] text-foreground placeholder:text-ink-faint transition-colors focus:border-accent focus:outline-none";
   return (
-    <label className="relative block">
+    <label className="block">
+      <span className="eyebrow">{label}</span>
       {textarea ? (
-        <textarea
-          name={name}
-          rows={4}
-          required={required}
-          placeholder={label}
-          className={baseClass + " resize-none"}
-        />
+        <textarea name={name} rows={5} required={required} className={baseClass + " resize-none"} />
       ) : (
         <input
           name={name}
           type={type}
           required={required}
-          placeholder={label}
+          autoComplete={autoComplete}
           className={baseClass}
         />
       )}
-      <span className="pointer-events-none absolute -top-2 left-0 font-mono text-[11px] uppercase tracking-widest text-background/60 transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-placeholder-shown:font-display peer-placeholder-shown:normal-case peer-placeholder-shown:tracking-normal peer-placeholder-shown:text-background/40 peer-focus:-top-2 peer-focus:font-mono peer-focus:text-[11px] peer-focus:uppercase peer-focus:tracking-widest peer-focus:text-accent">
-        {label}
-      </span>
     </label>
   );
 }

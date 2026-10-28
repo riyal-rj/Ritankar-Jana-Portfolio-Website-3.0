@@ -1,4 +1,5 @@
 import { Reveal } from "./Reveal";
+import { SectionHeading } from "./SectionHeading";
 import { EntityLogo } from "./EntityLogo";
 import logoOSS from "@/assets/logos/oss.png";
 import logoWhisper from "@/assets/logos/whisper.png";
@@ -125,37 +126,31 @@ const ITEMS: Item[] = [
 
 export function OtherExperiences() {
   return (
-    <section id="other" className="relative py-32 md:py-40">
+    <section id="other" className="section scroll-mt-16 border-t border-border bg-canvas-warm">
       <div className="editorial">
-        <Reveal>
-          <div className="mb-16 border-b border-border pb-10">
-            <p className="eyebrow mb-4">07 — Other Experiences</p>
-            <h2 className="font-display text-5xl leading-none tracking-tight text-foreground sm:text-6xl md:text-7xl">
-              Side quests &amp;{" "}
-              <span className="display-wonk text-accent">contributions</span>.
-            </h2>
-            <p className="mt-6 max-w-xl text-base leading-relaxed text-ink-soft md:text-lg">
-              Open-source work, side projects, hackathons and the occasional deep
-              dive — the stuff that doesn't fit on a résumé but actually shaped the
-              engineer I am.
-            </p>
-          </div>
-        </Reveal>
+        <SectionHeading
+          index="08"
+          eyebrow="Other Experiences"
+          title={
+            <>
+              Side quests &amp; <span className="accent-serif text-accent">contributions</span>.
+            </>
+          }
+          description="Open-source work, side projects, hackathons and the occasional deep dive — the stuff that doesn't fit on a résumé but actually shaped the engineer I am."
+        />
 
-        <div className="grid grid-cols-1 gap-px overflow-hidden border border-border bg-border md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
           {ITEMS.map((it, i) => (
             <Reveal key={it.title} delay={(i % 3) * 0.06}>
-              <article className="group relative flex h-full flex-col gap-5 bg-background p-8 transition-colors duration-500 hover:bg-canvas-warm">
-                <div className="flex items-center justify-between">
-                  <span className="font-mono text-[10px] uppercase tracking-widest text-accent">
+              <article className="card card-hover group relative flex h-full flex-col p-6">
+                <div className="flex items-center justify-between gap-3">
+                  <span className="font-mono text-[10.5px] uppercase tracking-[0.12em] text-accent">
                     {it.kind}
                   </span>
-                  <span className="font-mono text-[10px] uppercase tracking-widest text-ink-soft">
-                    {it.when}
-                  </span>
+                  <span className="font-mono text-[10.5px] text-ink-faint">{it.when}</span>
                 </div>
 
-                <div className="flex items-start gap-4">
+                <div className="mt-5 flex items-start gap-4">
                   <EntityLogo
                     src={it.logo}
                     alt={`${it.title} logo`}
@@ -163,40 +158,37 @@ export function OtherExperiences() {
                     size="sm"
                   />
                   <div className="min-w-0">
-                    <h3 className="font-display text-2xl leading-tight tracking-tight text-foreground md:text-3xl">
+                    <h3 className="text-lg font-semibold leading-snug tracking-[-0.02em] text-foreground">
                       {it.url ? (
+                        // The ::after overlay makes the whole card clickable
                         <a
                           href={it.url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="transition-colors hover:text-accent"
+                          className="transition-colors after:absolute after:inset-0 after:rounded-2xl after:content-[''] hover:text-accent"
                         >
-                          {it.title} <span className="text-accent">↗</span>
+                          {it.title}{" "}
+                          <span className="text-ink-faint transition-colors group-hover:text-accent">
+                            ↗
+                          </span>
                         </a>
                       ) : (
                         it.title
                       )}
                     </h3>
-                    <p className="mt-1 font-mono text-[11px] uppercase tracking-widest text-ink-soft">
+                    <p className="mt-1 font-mono text-[10.5px] leading-relaxed text-ink-faint">
                       {it.org}
                     </p>
                   </div>
                 </div>
 
-                <p className="text-sm leading-relaxed text-ink-soft md:text-base">
-                  {it.detail}
-                </p>
+                <p className="mt-4 text-[14.5px] leading-relaxed text-ink-soft">{it.detail}</p>
 
                 {it.highlight && (
-                  <p className="mt-auto border-t border-border pt-4 font-display text-sm italic text-foreground">
-                    → {it.highlight}
+                  <p className="mt-auto border-t border-border pt-4 font-mono text-[11px] text-foreground/80">
+                    <span className="text-accent">→</span> {it.highlight}
                   </p>
                 )}
-
-                <span
-                  aria-hidden
-                  className="absolute bottom-0 left-0 h-px w-0 bg-accent transition-all duration-700 group-hover:w-full"
-                />
               </article>
             </Reveal>
           ))}

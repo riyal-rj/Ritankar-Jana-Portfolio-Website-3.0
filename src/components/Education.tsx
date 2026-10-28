@@ -1,4 +1,5 @@
 import { Reveal } from "./Reveal";
+import { SectionHeading } from "./SectionHeading";
 import { EntityLogo } from "./EntityLogo";
 import logoTMSL from "@/assets/logos/tmsl.png";
 import logoJDS from "@/assets/logos/jds.png";
@@ -48,80 +49,45 @@ const ITEMS: Edu[] = [
 
 export function Education() {
   return (
-    <section id="education" className="relative bg-canvas-warm py-32 md:py-40">
+    <section id="education" className="section scroll-mt-16">
       <div className="editorial">
-        <Reveal>
-          <div className="mb-16 border-b border-border pb-10">
-            <p className="eyebrow mb-4">06 — Education</p>
-            <h2 className="font-display text-5xl leading-none tracking-tight text-foreground sm:text-6xl md:text-7xl">
-              Where it all <span className="display-wonk text-accent">began</span>.
-            </h2>
-          </div>
-        </Reveal>
+        <SectionHeading
+          index="07"
+          eyebrow="Education"
+          title={
+            <>
+              Where it all <span className="accent-serif text-accent">began</span>.
+            </>
+          }
+        />
 
-        <div className="relative">
-          {/* vertical rail */}
-          <div
-            aria-hidden
-            className="absolute left-[39px] top-2 bottom-2 w-px bg-border md:left-1/2 md:-translate-x-1/2"
-          />
-
-          <ol className="space-y-14 md:space-y-20">
-            {ITEMS.map((it, i) => {
-              const isRight = i % 2 === 1;
-              return (
-                <Reveal key={`${it.school}-${it.when}`} delay={i * 0.06}>
-                  <li className="relative grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-12">
-                    {/* logo node — replaces simple dot */}
-                    <span
-                      aria-hidden
-                      className="absolute left-0 top-0 z-10 md:left-1/2 md:-translate-x-1/2"
-                    >
-                      <EntityLogo
-                        src={it.logo}
-                        alt={`${it.school} logo`}
-                        fallback={it.fallback}
-                        size="md"
-                        className="bg-background"
-                      />
-                    </span>
-
-                    <div
-                      className={`pl-24 md:pl-0 ${
-                        isRight ? "md:order-2 md:pl-20" : "md:pr-20 md:text-right"
-                      }`}
-                    >
-                      <p className="font-mono text-[11px] uppercase tracking-widest text-ink-soft">
-                        {it.when}
-                      </p>
-                      <h3 className="mt-2 font-display text-3xl leading-tight tracking-tight text-foreground md:text-4xl">
-                        {it.school}
-                      </h3>
-                      <p className="mt-2 font-mono text-xs uppercase tracking-widest text-accent">
-                        {it.stream}
-                      </p>
-                      {it.marks && (
-                        <p className="mt-3 font-display text-lg italic text-ink-soft">
-                          {it.marks}
-                        </p>
-                      )}
-                    </div>
-
-                    <div
-                      className={`pl-24 md:pl-0 ${
-                        isRight ? "md:order-1 md:pr-20 md:text-right" : "md:pl-20"
-                      }`}
-                    >
-                      <p className="text-base leading-relaxed text-ink-soft md:text-lg">
-                        {it.detail}
-                      </p>
-                    </div>
-                  </li>
-                </Reveal>
-              );
-            })}
-          </ol>
-        </div>
+        <ol className="card divide-y divide-border">
+          {ITEMS.map((it, i) => (
+            <Reveal as="li" key={`${it.school}-${it.when}`} delay={i * 0.05}>
+              <div className="group grid grid-cols-1 gap-5 p-6 md:grid-cols-[auto_1fr_auto] md:items-start md:gap-8 md:p-8">
+                <EntityLogo
+                  src={it.logo}
+                  alt={`${it.school} logo`}
+                  fallback={it.fallback}
+                  size="md"
+                />
+                <div className="min-w-0">
+                  <p className="font-mono text-[11px] text-ink-faint">{it.when}</p>
+                  <h3 className="mt-1.5 text-xl font-semibold tracking-[-0.025em] text-foreground">
+                    {it.school}
+                  </h3>
+                  <p className="mt-1 text-sm text-accent">{it.stream}</p>
+                  <p className="mt-3 max-w-2xl leading-relaxed text-ink-soft">{it.detail}</p>
+                </div>
+                {it.marks && (
+                  <p className="w-fit rounded-full border border-border bg-canvas-warm px-3 py-1 font-mono text-xs text-foreground md:mt-6">
+                    {it.marks}
+                  </p>
+                )}
+              </div>
+            </Reveal>
+          ))}
+        </ol>
       </div>
     </section>
   );
