@@ -1,8 +1,5 @@
 import { Reveal } from "./Reveal";
 import whisperArt from "@/assets/proj-whisper.jpg";
-import emailArt from "@/assets/proj-email.jpg";
-import microservicesArt from "@/assets/proj-microservices.jpg";
-import fileShareArt from "@/assets/proj-fileshare.jpg";
 
 interface Project {
   no: string;
@@ -27,36 +24,6 @@ const PROJECTS: Project[] = [
     image: whisperArt,
     year: "2025",
   },
-  {
-    no: "02",
-    title: "Email Generator",
-    tagline: "AI auto-replies for Gmail, in-line",
-    description: "Spring Boot service backed by the Gemini API, paired with a React + ShadCN UI and a Chrome Extension that injects context-aware reply suggestions directly into Gmail.",
-    tags: ["Spring Boot", "Gemini API", "React", "Chrome Ext"],
-    github: "https://github.com/riyal-rj/email-generator",
-    image: emailArt,
-    year: "2025",
-  },
-  {
-    no: "03",
-    title: "Stokis AI",
-    tagline: "Sentiment-aware hybrid forecasting for modern investors",
-    description: "A full-stack predictive engine using CNN-BiLSTM and FinBERT to forecast stock trends with 93%+ accuracy by blending technical indicators with real-time market sentiment.",
-    tags: ["Next.js", "FastAPI", "CNN-BiLSTM", "FinBERT", "MongoDB", "CrewAI"],
-    github: "https://github.com/riyal-rj/Stock-Price-Prediction-and-Forecasting",
-    image: microservicesArt,
-    year: "2024 - 2025",
-  },
-  {
-    no: "04",
-    title: "TriNayan",
-    tagline: "AI-powered currency recognition for the visually impaired",
-    description: "An accessibility-focused system using YOLOv8 and Vision Transformers to provide real-time currency detection with audio feedback, achieving 95%+ accuracy for the RBI HaRBInger-2024 hackathon.",
-    tags: ["YOLOv8", "Vision Transformers", "PyTorch", "OpenCV", "Streamlit", "Python"],
-    github: "https://github.com/riyal-rj/identifier",
-    image: fileShareArt,
-    year: "2024",
-  },
 ];
 
 export function Projects() {
@@ -66,9 +33,9 @@ export function Projects() {
         <Reveal>
           <div className="mb-16 flex flex-wrap items-end justify-between gap-6 border-b border-border pb-10">
             <div>
-              <p className="eyebrow mb-4">03 — Selected Work</p>
+              <p className="eyebrow mb-4">04 — Selected Work</p>
               <h2 className="font-display text-5xl leading-none tracking-tight text-foreground sm:text-6xl md:text-7xl">
-                A handful of <span className="display-wonk text-accent">things</span> I built.
+                The <span className="display-wonk text-accent">flagship</span> build.
               </h2>
             </div>
             <a

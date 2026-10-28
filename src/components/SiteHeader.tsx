@@ -2,10 +2,10 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 const NAV = [
-  { label: "Work", href: "#work" },
   { label: "About", href: "#about" },
-  { label: "Stack", href: "#stack" },
   { label: "Experience", href: "#experience" },
+  { label: "Work", href: "#work" },
+  { label: "Stack", href: "#stack" },
   { label: "Education", href: "#education" },
   { label: "Contact", href: "#contact" },
 ];

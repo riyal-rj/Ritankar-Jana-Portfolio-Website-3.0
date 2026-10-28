@@ -12,7 +12,7 @@ export function Hero() {
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
             </span>
-            Currently — Systems Engineer @ Tata Consultancy Services
+            Currently — Systems Engineer, AI Engineer @ Tata Consultancy Services
           </p>
           <p className="eyebrow">Kolkata, IN · Open to roles</p>
         </div>
@@ -58,10 +58,10 @@ export function Hero() {
               <p className="eyebrow whitespace-nowrap">↳ The intro</p>
               <p className="text-lg leading-relaxed text-ink-soft sm:text-xl">
                 I'm <span className="text-foreground">Ritankar Jana</span> — a
-                software engineer building robust backend systems and tinkering
-                with LLMs, microservices, and the unglamorous parts that make
-                products feel effortless. Currently shipping at CloudKaptan,
-                always learning out loud.
+                software engineer building robust backend systems and agentic
+                AI, and the unglamorous parts that make products feel
+                effortless. Currently designing GenAI systems for global BFSI
+                clients at TCS, always learning out loud.
               </p>
             </motion.div>
 
@@ -120,6 +120,10 @@ export function Hero() {
                 <span>Backend Engineering</span>
                 <span className="text-accent">✦</span>
                 <span className="display-wonk italic">Distributed Systems</span>
+                <span className="text-accent">✦</span>
+                <span>Agentic AI</span>
+                <span className="text-accent">✦</span>
+                <span className="display-wonk italic">Enterprise RAG</span>
                 <span className="text-accent">✦</span>
                 <span>LLM Pipelines</span>
                 <span className="text-accent">✦</span>

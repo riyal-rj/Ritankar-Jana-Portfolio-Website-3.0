@@ -67,7 +67,7 @@ export function Stack() {
         <Reveal>
           <div className="mb-16 flex flex-wrap items-end justify-between gap-6 border-b border-border pb-10">
             <div>
-              <p className="eyebrow mb-4">04 — The Stack</p>
+              <p className="eyebrow mb-4">05 — The Stack</p>
               <h2 className="font-display text-5xl leading-none tracking-tight text-foreground sm:text-6xl md:text-7xl">
                 Tools, well <span className="display-wonk text-accent">used</span>.
               </h2>

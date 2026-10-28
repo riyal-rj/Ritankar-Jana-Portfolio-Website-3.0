@@ -14,11 +14,47 @@ interface Item {
   when: string;
   detail: string;
   highlight?: string;
+  url?: string;
   logo?: string;
   fallback: string;
 }
 
 const ITEMS: Item[] = [
+  {
+    kind: "AI / Full-Stack",
+    title: "Email Generator — AI Replies for Gmail",
+    org: "Self-initiated · Spring Boot · Gemini · React",
+    when: "2025",
+    detail:
+      "Spring Boot service backed by the Gemini API, paired with a React + ShadCN UI and a Chrome Extension that injects context-aware reply suggestions directly into Gmail.",
+    highlight: "Spring Boot · Gemini API · Chrome Extension",
+    url: "https://github.com/riyal-rj/email-generator",
+    logo: logoAimail,
+    fallback: "MAIL",
+  },
+  {
+    kind: "AI / FinTech",
+    title: "Stokis AI — Sentiment-Aware Forecasting",
+    org: "Self-initiated · Next.js · FastAPI · CrewAI",
+    when: "2024 — 2025",
+    detail:
+      "A full-stack predictive engine using CNN-BiLSTM and FinBERT to forecast stock trends with 93%+ accuracy by blending technical indicators with real-time market sentiment.",
+    highlight: "93%+ Accuracy · CNN-BiLSTM · FinBERT",
+    url: "https://github.com/riyal-rj/Stock-Price-Prediction-and-Forecasting",
+    fallback: "STK",
+  },
+  {
+    kind: "Hackathon · AI",
+    title: "TriNayan — Currency Recognition for the Visually Impaired",
+    org: "RBI HaRBInger 2024 · YOLOv8 · ViT",
+    when: "2024",
+    detail:
+      "An accessibility-focused system using YOLOv8 and Vision Transformers to provide real-time currency detection with audio feedback, achieving 95%+ accuracy for the RBI HaRBInger-2024 hackathon.",
+    highlight: "95%+ Accuracy · YOLOv8 · Vision Transformers",
+    url: "https://github.com/riyal-rj/identifier",
+    logo: logoHack,
+    fallback: "TN",
+  },
   {
     kind: "AI / Systems",
     title: "WebMeAnything — RAG Document Assistant",
@@ -128,7 +164,18 @@ export function OtherExperiences() {
                   />
                   <div className="min-w-0">
                     <h3 className="font-display text-2xl leading-tight tracking-tight text-foreground md:text-3xl">
-                      {it.title}
+                      {it.url ? (
+                        <a
+                          href={it.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="transition-colors hover:text-accent"
+                        >
+                          {it.title} <span className="text-accent">↗</span>
+                        </a>
+                      ) : (
+                        it.title
+                      )}
                     </h3>
                     <p className="mt-1 font-mono text-[11px] uppercase tracking-widest text-ink-soft">
                       {it.org}

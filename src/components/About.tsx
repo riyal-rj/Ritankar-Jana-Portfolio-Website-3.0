@@ -2,8 +2,9 @@ import { Reveal } from "./Reveal";
 
 const FACTS = [
   { k: "Based in", v: "Kolkata, India" },
-  { k: "Currently", v: "TCS · Systems Engineer" },
-  { k: "Focus", v: "Backend · Microservices · LLMs " },
+  { k: "Currently", v: "TCS · AI Engineer" },
+  { k: "Focus", v: "Agentic AI · RAG · Backend" },
+  { k: "Domain", v: "BFSI · Banking · Insurance" },
   { k: "Available", v: "Open to full-time roles" },
 ];
 
@@ -29,11 +30,18 @@ export function About() {
             <Reveal delay={0.1}>
               <div className="mt-12 space-y-6 text-lg leading-relaxed text-ink-soft md:text-xl">
                 <p>
-                  I'm a system engineer at{" "}
-                  <span className="text-foreground">Tata Consultancy Services</span>, with a
-                  bias toward backend systems — the kind of work where
-                  correctness, latency, and observability matter more than
-                  pixels.
+                  I'm a Systems Engineer and AI Engineer at{" "}
+                  <span className="text-foreground">Tata Consultancy Services</span>{" "}
+                  in the BFSI and fintech domain, designing agentic and GenAI
+                  systems for global BFSI clients like Euroclear, ING and AG
+                  Insurance. That means requirements automation, legacy
+                  modernisation, enterprise RAG and compliance auditing.
+                </p>
+                <p>
+                  I go from architecture and cost budgeting to the client pitch,
+                  turning PoCs into ROI-backed workflows that real teams adopt.
+                  It's backend work at heart: correctness, latency and
+                  observability matter more than pixels.
                 </p>
                 <p>
                   My playground sits at the intersection of distributed

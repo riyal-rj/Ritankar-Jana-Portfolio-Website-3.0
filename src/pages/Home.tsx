@@ -17,9 +17,9 @@ export default function Home() {
       <SiteHeader />
       <Hero />
       <About />
+      <Experience />
       <Projects />
       <Stack />
-      <Experience />
       <Education />
       <OtherExperiences />
       <Contact />
